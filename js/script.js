@@ -22,34 +22,77 @@ Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i 
 Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
 */
 
+//RECUPERO GLI ELEMENTI DAL DOM
+const feed = document.querySelector('.posts-list')
 
 //#  Milestone 1 
 const post = [
     {
         id : 1,
         nome : 'Phill Mangione',
-        imgProfile : 'https://picsum.photos/600/300',
-        data : 05/25/2021,
+        imgProfile : 'https://picsum.photos/500/400?image=41',
+        data : '05/25/2021',
         descrizione : 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-        imgPost : 'https://picsum.photos/600/300',
-        like : 'Piace a 80 persone'
+        imgPost : 'https://picsum.photos/600/300?image=3',
+        like : 80
     },
     {
         id : 2,
-        nome : 'Phill Mangione',
-        imgProfile : 'https://picsum.photos/600/300',
-        data : 01/25/2020,
+        nome : 'Betty D. Montgomery',
+        imgProfile : 'https://picsum.photos/500/400?image=20',
+        data : '01/25/2020',
         descrizione : 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
-        imgPost : 'https://picsum.photos/600/300',
-        like : 'Piace a 80 persone'
+        imgPost : 'https://picsum.photos/600/300?image=100',
+        like : 80
     },
     {
         id : 3,
-        nome : 'Phill Mangione',
-        imgProfile : 'https://picsum.photos/600/300',
-        data : 06/07/2022,
+        nome : 'Steven M. Caldwell',
+        imgProfile : 'https://picsum.photos/500/400?image=51',
+        data : '06/07/2022',
         descrizione : 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
         imgPost : 'https://picsum.photos/600/300',
-        like : 'Piace a 80 persone'
+        like : 80
     }
 ]
+
+//#  Milestone 2
+let posts = '';
+
+for(let i = 0; i < post.length; i++){
+    const currentPost = post[i];
+
+    posts +=
+    `<div class="post">
+        <div class="post__header">
+          <div class="post-meta">
+            <div class="post-meta__icon">
+              <img class="profile-pic" src="${currentPost.imgProfile}" alt="${currentPost.nome}" />
+            </div>
+            <div class="post-meta__data">
+              <div class="post-meta__author">${currentPost.nome}</div>
+              <div class="post-meta__time">${currentPost.data}</div>
+            </div>
+          </div>
+        </div>
+        <div class="post__text">
+            ${currentPost.descrizione}
+        </div>
+        <div class="post__image">
+          <img src="${currentPost.imgPost}" alt="post" />
+        </div>
+        <div class="post__footer">
+          <div class="likes js-likes">
+            <div class="likes__cta">
+              <a class="like-button js-like-button" href="#" data-postid="1">
+                <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                <span class="like-button__label">Mi Piace</span>
+              </a>
+            </div>
+            <div class="likes__counter">Piace a <b id="like-counter-1" class="js-likes-counter">${currentPost.like}</b> persone</div>
+          </div>
+        </div>
+      </div>`;
+}
+
+feed.innerHTML = posts;
