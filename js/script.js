@@ -34,7 +34,7 @@ const post = [
         data : '05/25/2021',
         descrizione : 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
         imgPost : 'https://picsum.photos/600/300?image=3',
-        like : 80
+        like : 50,
     },
     {
         id : 2,
@@ -43,7 +43,7 @@ const post = [
         data : '01/25/2020',
         descrizione : 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
         imgPost : 'https://picsum.photos/600/300?image=100',
-        like : 80
+        like : 90,
     },
     {
         id : 3,
@@ -52,9 +52,11 @@ const post = [
         data : '06/07/2022',
         descrizione : 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
         imgPost : 'https://picsum.photos/600/300',
-        like : 80
+        like : 100,
     }
+
 ]
+
 
 //#  Milestone 2
 let posts = '';
@@ -93,6 +95,22 @@ for(let i = 0; i < post.length; i++){
           </div>
         </div>
       </div>`;
+      
 }
 
 feed.innerHTML = posts;
+
+
+
+//#  Milestone 3
+const like = document.querySelector('.like-button');
+const likePost = document.getElementById('like-counter-1')
+
+like.addEventListener('click', function(){
+    like.classList.toggle('like-button--liked');
+    ++likePost
+})
+
+
+
+
