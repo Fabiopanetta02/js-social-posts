@@ -21,3 +21,35 @@ Prendendo come riferimento il layout di esempio presente nell'html, stampiamo i 
 #Milestone 3
 Se clicchiamo sul tasto "Mi Piace" cambiamo il colore al testo del bottone e incrementiamo il counter dei likes relativo.
 */
+
+
+//#  Milestone 1 
+const post = [
+    {
+        id : 1,
+        nome : 'Phill Mangione',
+        imgProfile : 'https://picsum.photos/600/300',
+        data : 05/25/2021,
+        descrizione : 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
+        imgPost : 'https://picsum.photos/600/300',
+        like : 'Piace a 80 persone'
+    },
+    {
+        id : 2,
+        nome : 'Phill Mangione',
+        imgProfile : 'https://picsum.photos/600/300',
+        data : 01/25/2020,
+        descrizione : 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
+        imgPost : 'https://picsum.photos/600/300',
+        like : 'Piace a 80 persone'
+    },
+    {
+        id : 3,
+        nome : 'Phill Mangione',
+        imgProfile : 'https://picsum.photos/600/300',
+        data : 06/07/2022,
+        descrizione : 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
+        imgPost : 'https://picsum.photos/600/300',
+        like : 'Piace a 80 persone'
+    }
+]
