@@ -103,13 +103,15 @@ feed.innerHTML = posts;
 
 
 //#  Milestone 3
-const like = document.querySelector('.like-button');
-const likePost = document.getElementById('like-counter-1')
+const like = document.querySelectorAll('.like-button');
 
-like.addEventListener('click', function(){
-    like.classList.toggle('like-button--liked');
-    ++likePost
-})
+for (let i = 0; i < like.length; i++) {
+    like[i].addEventListener("click", function() {
+      like[i].classList.toggle("like-button--liked");
+    });
+}
+
+
 
 
 
