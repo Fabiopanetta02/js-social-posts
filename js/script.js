@@ -49,7 +49,7 @@ const post = [
         id : 3,
         nome : 'Steven M. Caldwell',
         imgProfile : 'https://picsum.photos/500/400?image=51',
-        data : '06/07/2022',
+        data : '06/25/2022',
         descrizione : 'Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.',
         imgPost : 'https://picsum.photos/600/300',
         like : 100,
@@ -86,12 +86,12 @@ for(let i = 0; i < post.length; i++){
         <div class="post__footer">
           <div class="likes js-likes">
             <div class="likes__cta">
-              <a class="like-button js-like-button" href="#" data-postid="1">
+              <a class="like-button js-like-button" href="#" data-postid="${currentPost.id}">
                 <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                 <span class="like-button__label">Mi Piace</span>
               </a>
             </div>
-            <div class="likes__counter">Piace a <b id="like-counter-1" class="js-likes-counter">${currentPost.like}</b> persone</div>
+            <div class="likes__counter">Piace a <b id="like-counter-${currentPost.id}" class="js-likes-counter">${currentPost.like}</b> persone</div>
           </div>
         </div>
       </div>`;
@@ -108,6 +108,16 @@ const like = document.querySelectorAll('.like-button');
 for (let i = 0; i < like.length; i++) {
     like[i].addEventListener("click", function() {
       like[i].classList.toggle("like-button--liked");
+
+      const postId = like[i].dataset.postid;
+
+      const likeCounter = document.getElementById(`like-counter-${postId}`)
+
+      let likes = parseInt(likeCounter.innerText);
+
+      const isLiked = like[i].classList.contains("like-button--liked");
+
+      likeCounter.innerText = isLiked? ++likes: --likes;
     });
 }
 
